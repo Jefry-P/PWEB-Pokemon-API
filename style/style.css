@@ -47,7 +47,7 @@
 
 body{
     background-color: var(--background-color);
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
@@ -64,6 +64,7 @@ body{
 .h1{
     font-family: 'Pokemon-font';
     font-size: 3em;
+    text-align: center;
     color: var(--secondary-color);
     letter-spacing: .07em;
     -webkit-text-stroke: .04em var(--primary-color);
@@ -163,6 +164,7 @@ li.card{
     border-radius: .5em;
     padding: 1em 1em 1em 0;
     align-items: center;
+    position: relative;
 }
 
 .span-name::first-letter{
@@ -175,6 +177,7 @@ li.card{
 .card-section{
     display: flex;
     align-items: center;
+    margin-left: 1.2em;
     gap: 1em;
 }
 .card img{
@@ -200,7 +203,10 @@ li.card{
     height: 5em;
     border-top-left-radius: .5em;
     border-bottom-left-radius: .5em;
-
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
 }
 
 .type{
@@ -285,4 +291,29 @@ li.card{
 
 .steel{
     background-color: var(--steel);
+}
+
+@media screen and (max-width: 500px){
+    #search-form{
+        width: 100%;
+        gap: 1em;
+        padding: 1em;
+    }
+
+    body{
+        padding: .5em;
+    }
+
+    li.card{
+        width: 100%;
+        flex-direction: column;
+        height: 9em;
+    }
+    .card-section{
+        width: 100%;
+        justify-content: center;
+    }
+    .card-buttons{
+        margin-left: 1.6em;
+    }
 }
